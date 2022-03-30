@@ -25,10 +25,10 @@ export default function Create() {
       section:''
   })
 
-  const createEmployee = () => {
-  //  axios.post('http://localhost:5000/office',employee).then(() =>{
-  //      window.location.reload(false);
-  //   })
+  const createEmployees = () => {
+   axios.post('http://localhost:5000/office',employee).then(() =>{
+       window.location.reload(false);
+    })
     console.log(employee)
     //console.log(typeof(employee.salary))
   }
@@ -38,7 +38,7 @@ export default function Create() {
       <h2> Create Employee </h2>
     <form className={classes.root}  autoComplete="off">
      
-      <TextField id="standard-number" type="number" label="Employee Number" variant="outlined" value={employee.empNo} onChange={(e)=>
+      <TextField id="outlined-basic" label="Employee Number" variant="outlined" value={employee.empNo} onChange={(e)=>
       {
         setEmployee({ ...employee,empNo : e.target.value})
       }}/>
@@ -50,11 +50,11 @@ export default function Create() {
       {
         setEmployee({ ...employee,email : e.target.value})
       }}/>
-      <TextField id="standard-number" type="number" label="salary" variant="outlined" value={employee.salary}  onChange={(e)=>
+      <TextField id="outlined-basicr"  label="salary" variant="outlined" value={employee.salary}  onChange={(e)=>
       {
         setEmployee({ ...employee,salary : e.target.value})
       }}/>
-      <TextField id="standard-number" type="number" label="Phone" variant="outlined" value={employee.phone}  onChange={(e)=>
+      <TextField id="outlined-basic"  label="Phone" variant="outlined" value={employee.phone}  onChange={(e)=>
       {
         setEmployee({ ...employee,phone : e.target.value})
       }}/>
@@ -62,7 +62,7 @@ export default function Create() {
       {
         setEmployee({ ...employee,section : e.target.value})
       }}/>
-      <Button variant="contained" color="primary" onClick={createEmployee}>
+      <Button variant="contained" color="primary" onClick={createEmployees}>
        Create
       </Button>
     </form>
