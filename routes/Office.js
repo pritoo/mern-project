@@ -1,9 +1,12 @@
 import  express from "express";
-import {getEmployees} from "../controllers/office.js";
-import employee from '../models/office.js'
+import {getEmployees,createEmployees,deleteEmployee} from "../controllers/office.js";
+import office from '../models/office.js'
 const router =express.Router();
  
-router.get('/getEmployees',getEmployees);
+router.get('/',getEmployees);
+
+router.post('/',createEmployees);
+
+router.delete('/:id',deleteEmployee);
 
 export default router
-
