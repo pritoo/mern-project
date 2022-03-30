@@ -1,16 +1,20 @@
 import mongoose from 'mongoose'
 
 const employeeSchema = mongoose.Schema({
-    employmentnumber:Number,
+
+    empNo:Number,
     name: String,
     email:String,
     salary:Number,
+    phone:{
+        type:Number
+    },
     section:{
         type:String,
         default:"A"
-    },
-    subject:[String]
+    }
 })
+//console.log(employeeSchema)
 
 const employee = mongoose.model('employee',employeeSchema);
- export default employee 
+ export default employee
